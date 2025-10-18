@@ -102,13 +102,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\jekac\Downloads\SFML-2.6.2\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\USUARIO UNA PZ\Documents\SFML-2.6.2\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\jekac\Downloads\SFML-2.6.2\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\USUARIO UNA PZ\Documents\SFML-2.6.2\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -132,14 +132,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BombGem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gem.cpp" />
+    <ClCompile Include="IceGem.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NormalGem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BombGem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Gem.h" />
+    <ClInclude Include="IceGem.h" />
+    <ClInclude Include="NormalGem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
