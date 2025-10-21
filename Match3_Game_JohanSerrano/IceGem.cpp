@@ -13,11 +13,12 @@ IceGem::IceGem(int aKind, int aRow, int aCol)
 
 string IceGem::getType() const
 {
-    return string("Ice Gem");
+    return string("Ice");
 }
 
 void IceGem::draw(RenderWindow& window)
 {
-    sprite.setColor(Color(150, 200, 255, static_cast<sf::Uint8>(alpha)));
+    sprite.setColor(Color(30, 80, 255, alpha));
+
     window.draw(sprite);
 }
