@@ -101,25 +101,25 @@ void Game::runGameLoop() {
     Text scoreText, movesText, levelText;
 
     scoreText.setFont(font);
-    scoreText.setCharacterSize(30);
+    scoreText.setCharacterSize(40);
     scoreText.setFillColor(Color::White);
     scoreText.setOutlineColor(Color::Black);
     scoreText.setOutlineThickness(2);
     scoreText.setPosition(70, 8);
 
     movesText.setFont(font);
-    movesText.setCharacterSize(30);
+    movesText.setCharacterSize(40);
     movesText.setFillColor(Color::White);
     movesText.setOutlineColor(Color::Black);
     movesText.setOutlineThickness(2);
     movesText.setPosition(550, 8);
 
     levelText.setFont(font);
-    levelText.setCharacterSize(25);
-    levelText.setFillColor(Color::Yellow);
+    levelText.setCharacterSize(40);
+    levelText.setFillColor(Color::White);
     levelText.setOutlineColor(Color::Black);
     levelText.setOutlineThickness(2);
-    levelText.setPosition(310, 10);
+    levelText.setPosition(340, 8);
 
     Clock clock;
 
@@ -186,10 +186,10 @@ void Game::drawObjectivesPanel(RenderWindow& window) {
     if (!objective) return;
 
     // Panel de fondo
-    RectangleShape panel(Vector2f(180, 100));
-    panel.setPosition(10, 480);
-    panel.setFillColor(Color(0, 0, 0, 180));
-    panel.setOutlineColor(Color(255, 255, 255));
+    RectangleShape panel(Vector2f(300, 60));
+    panel.setPosition(8, 535);
+    panel.setFillColor(Color(19, 14, 59, 160));
+    panel.setOutlineColor(Color(0, 0, 0));
     panel.setOutlineThickness(2);
     window.draw(panel);
 
@@ -197,16 +197,23 @@ void Game::drawObjectivesPanel(RenderWindow& window) {
     Text title;
     title.setFont(font);
     title.setString("Objective");
-    title.setCharacterSize(20);
-    title.setFillColor(Color::Yellow);
-    title.setPosition(45, 485);
+    title.setCharacterSize(40);
+    title.setFillColor(Color::Cyan);
+    title.setOutlineColor(Color::Black);
+    title.setOutlineThickness(2);
+    title.setPosition(10, 520);
     window.draw(title);
 
     // Texto del objetivo
     Text objText;
     objText.setFont(font);
-    objText.setCharacterSize(14);
-    objText.setPosition(15, 515);
+    objText.setCharacterSize(40);
+    objText.setOutlineColor(Color::Black);
+    objText.setOutlineThickness(2);
+    objText.setPosition(10, 540);
+
+    int kind = objective->getGemKind();
+    Texture target;
 
     string objStr = "";
     Color textColor = Color::White;
@@ -236,13 +243,13 @@ void Game::drawObjectivesPanel(RenderWindow& window) {
 
     // Barra de progreso
     RectangleShape progressBg(Vector2f(150, 10));
-    progressBg.setPosition(15, 540);
+    progressBg.setPosition(12, 580);
     progressBg.setFillColor(Color(50, 50, 50));
     window.draw(progressBg);
 
     float progress = objective->getProgress();
     RectangleShape progressBar(Vector2f(150 * progress, 10));
-    progressBar.setPosition(15, 540);
+    progressBar.setPosition(12, 580);
     progressBar.setFillColor(objective->isCompleted() ? Color::Green : Color::Cyan);
     window.draw(progressBar);
 }
